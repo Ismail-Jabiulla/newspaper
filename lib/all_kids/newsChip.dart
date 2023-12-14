@@ -74,16 +74,16 @@ class _NewsCategoriesChipState extends State<NewsCategoriesChip>
             ],
           ),
           SizedBox(
-            height: 640, // Adjust height as needed
+            height: 500,
             child: TabBarView(
               controller: _tabController,
               children: const [
                 AllLatestKid(),
-                PoliticsPage(),
-                Center(child: Text('Technical ')),
-                SportsPage(),
-                Center(child: Text('International content')),
-                Center(child: Text('Media content')),
+                AllLatestKid(),
+                AllLatestKid(),
+                AllLatestKid(),
+                AllLatestKid(),
+                AllLatestKid(),
               ],
             ),
           ),

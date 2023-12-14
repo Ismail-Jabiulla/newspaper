@@ -1,11 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:newspaper/categorykid/politics.dart';
 import 'package:newspaper/constants/image_strings.dart';
+import '../all_kids/bottomSheetKid.dart';
 import '../constants/colors.dart';
 import '../constants/fonts_widgets.dart';
-import '../constants/strings.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AllLatestKid extends StatefulWidget {
@@ -28,150 +26,149 @@ class _AllLatestKidState extends State<AllLatestKid> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 16.0),
-      child: ListView(
-        // crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // politics Section
-          Padding(
-            padding: const EdgeInsets.only(top: 8.0, left: 16, right: 16),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Politics',
-                  style: GoogleFonts.inter(
-                      textStyle: TextStyle(
-                          fontWeight: FontWeights.SemiBold, fontSize: 20)),
-                ),
-                GestureDetector(
-                    onTap: () {
-                      print('View All');
-                    },
-                    child: Text('All View')),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 16, left: 8.0, right: 8.0),
-            child: GridView.builder(
-              shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                crossAxisSpacing: 10.0,
-                mainAxisSpacing: 10.0,
-                childAspectRatio: 0.61,
-              ),
-              itemCount: showMore ? 10 : 2,
-              itemBuilder: (BuildContext context, int index) {
-                return Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16),
-                    color: AppColors.colorGreyLightest,
-                  ),
-                  child: Column(
-                    children: [
-                      //Title
-                      Padding(
-                        padding: const EdgeInsets.only(
-                            top: 16.0, left: 16.0, right: 16.0),
-                        child: Text(
-                          'Can US visa bans deter West Bank violence by Israeli settlers?',
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 2,
-                          style: GoogleFonts.inter(
-                              textStyle: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeights.Bold,
-                                  color: AppColors.colorBlackIcon)),
-                        ),
-                      ),
-
-                      //Sub-Title
-                      Padding(
-                        padding: const EdgeInsets.only(
-                            top: 8.0, left: 16.0, right: 16.0),
-                        child: Text(
-                          'Hours after the announcement, Israeli Defence Minister Yoav Gallant said at a news conference: “There is, sadly, violence from extremists that we must condemn,” while many American officials have called on Israel to implement stricter measures against such incidents.',
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 3,
-                          style: GoogleFonts.inter(
-                              textStyle: TextStyle(
-                                  fontSize: 10,
-                                  fontWeight: FontWeights.SemiBold,
-                                  color: AppColors.colorBlackIcon)),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 8.0),
-                        child: ClipRRect(
-                            borderRadius: BorderRadius.circular(12),
-                            child: Image.asset(
-                              appImages.imageAllnewspolitics,
-                              height: 100,
-                              width: 180,
-                            )),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(
-                          left: 8.0,
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text('12.13 AM'),
-                            IconButton(
-                                onPressed: () {},
-                                icon: Icon(Icons.more_horiz))
-                          ],
-                        ),
-                      ),
-                      IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.play_circle_filled_sharp,
-                            size: 44,
-                            color: AppColors.colorBlackHighButton,
-                          ))
-                    ],
-                  ),
-                );
-              },
-            ),
-          ),
-
-          //Politics SeeMore Button
-          Padding(
-            padding: const EdgeInsets.only(top: 16.0),
-            child: Center(
-              child: GestureDetector(
-                onTap: () {
-                  toggleShowMore();
-                },
-                child: Container(
-                  height: 23,
-                  width: 78,
-                  alignment: AlignmentDirectional.center,
-                  decoration: BoxDecoration(
-                      color: AppColors.colorBlackHighButton,
-                      borderRadius: BorderRadius.circular(4)),
-                  child: Text(
-                    showMore ? 'See less' : 'See more',
+      child: SingleChildScrollView(
+        child: Column(
+          // shrinkWrap: true,
+          // physics: NeverScrollableScrollPhysics(),
+          children: [
+            // politics Section
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0, left: 16, right: 16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Politics',
                     style: GoogleFonts.inter(
                         textStyle: TextStyle(
-                            fontSize: 10,
-                            fontWeight: FontWeights.Bold,
-                            color: AppColors.colorText)),
+                            fontWeight: FontWeights.SemiBold, fontSize: 20)),
+                  ),
+                  GestureDetector(
+                      onTap: () {
+                        print('View All');
+                      },
+                      child: Text('All View')),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 16, left: 8.0, right: 8.0),
+              child: GridView.builder(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 10.0,
+                  mainAxisSpacing: 10.0,
+                  childAspectRatio: 0.61,
+                ),
+                itemCount: showMore ? 10 : 2,
+                itemBuilder: (BuildContext context, int index) {
+                  return Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(16),
+                      color: AppColors.colorGreyLightest,
+                    ),
+                    child: Column(
+                      children: [
+                        //Title
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              top: 16.0, left: 16.0, right: 16.0),
+                          child: Text(
+                            'Can US visa bans deter West Bank violence by Israeli settlers?',
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 2,
+                            style: GoogleFonts.inter(
+                                textStyle: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeights.Bold,
+                                    color: AppColors.colorBlackIcon)),
+                          ),
+                        ),
+
+                        //Sub-Title
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              top: 8.0, left: 16.0, right: 16.0),
+                          child: Text(
+                            'Hours after the announcement, Israeli Defence Minister Yoav Gallant said at a news conference: “There is, sadly, violence from extremists that we must condemn,” while many American officials have called on Israel to implement stricter measures against such incidents.',
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 3,
+                            style: GoogleFonts.inter(
+                                textStyle: TextStyle(
+                                    fontSize: 10,
+                                    fontWeight: FontWeights.SemiBold,
+                                    color: AppColors.colorBlackIcon)),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 8.0),
+                          child: ClipRRect(
+                              borderRadius: BorderRadius.circular(12),
+                              child: Image.asset(
+                                appImages.imageAllnewspolitics,
+                                height: 100,
+                                width: 180,
+                              )),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only( top: 16,
+                            left: 8.0, right: 8.0
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text('12.13 AM'),
+                              BottomSheetsPage(),
+                            ],
+                          ),
+                        ),
+                        IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.play_circle_filled_sharp,
+                              size: 44,
+                              color: AppColors.colorBlackHighButton,
+                            ))
+                      ],
+                    ),
+                  );
+                },
+              ),
+            ),
+            //Politics SeeMore Button
+            Padding(
+              padding: const EdgeInsets.only(top: 16.0),
+              child: Center(
+                child: GestureDetector(
+                  onTap: () {
+                    toggleShowMore();
+                  },
+                  child: Container(
+                    height: 23,
+                    width: 78,
+                    alignment: AlignmentDirectional.center,
+                    decoration: BoxDecoration(
+                        color: AppColors.colorBlackHighButton,
+                        borderRadius: BorderRadius.circular(4)),
+                    child: Text(
+                      showMore ? 'See less' : 'See more',
+                      style: GoogleFonts.inter(
+                          textStyle: TextStyle(
+                              fontSize: 10,
+                              fontWeight: FontWeights.Bold,
+                              color: AppColors.colorText)),
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
+            SportNews(),
+            TechnologyNews()
 
-          SportNews(),
-          TechnologyNews()
-
-        ],
+          ],
+        ),
       ),
     );
   }

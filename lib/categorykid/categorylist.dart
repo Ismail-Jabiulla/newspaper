@@ -1,5 +1,3 @@
-import 'dart:html';
-import 'dart:js';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -31,7 +29,7 @@ class CategoriesList extends StatelessWidget {
         right: 16,
       ),
       child: Container(
-        height: 500,
+        height: 580,
         child: Padding(
           padding: const EdgeInsets.only(bottom: 50.0),
           child: GridView.builder(

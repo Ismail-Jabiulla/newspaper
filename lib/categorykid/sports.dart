@@ -1,11 +1,14 @@
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:newspaper/constants/colors.dart';
 import 'package:newspaper/constants/fonts_widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SportsPage extends StatelessWidget {
-  const SportsPage({super.key});
+import '../all_kids/bottomSheetKid.dart';
+
+class sportsPage extends StatelessWidget {
+  const sportsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +38,7 @@ class SportsPage extends StatelessWidget {
             ListView.builder(
               shrinkWrap: true,
               itemCount: 10,
-              scrollDirection: Axis.vertical,
+              physics: NeverScrollableScrollPhysics(),
               itemBuilder: (BuildContext context, index) {
                 return Padding(
                   padding: const EdgeInsets.only(top: 8.0, left: 8.0, right: 8.0),
@@ -59,7 +62,7 @@ class SportsPage extends StatelessWidget {
                                 width: 102,
                               )),
                           title: Text(
-                            'Bangladesh began World Cup campaign against Afghanistan',
+                            'Mushfiqur out for obstructing the field',
                             overflow: TextOverflow.ellipsis,
                             maxLines: 1,
                             style: TextStyle(fontWeight: FontWeights.SemiBold),
@@ -67,8 +70,7 @@ class SportsPage extends StatelessWidget {
                           subtitle: Padding(
                             padding: const EdgeInsets.only(top: 8.0),
                             child: Text(
-                              '''Defending champion England and New Zealand are set to face each other in the tournament opener on October 5 at the Narendra Modi Stadium in Ahmedabad. 
-                              The 13th edition of the ICC Cricket World Cup’s schedule has been released which will be hosted by India between October 5 to November 19. ''',
+                              'Google has updated Android with several security and privacy-oriented features over the years and the search giant is reportedly working on adding support for identifying phishing apps to protect users.',
                               overflow: TextOverflow.ellipsis,
                               maxLines: 2,
                             ),
@@ -91,7 +93,7 @@ class SportsPage extends StatelessWidget {
                         ),
                         Padding(
                           padding: const EdgeInsets.only(left: 136.0),
-                          child: Text('9.26 PM'),
+                          child: Text('10.14 PM'),
                         ),
                       ],
                     ),
@@ -106,88 +108,3 @@ class SportsPage extends StatelessWidget {
   }
 }
 
-
-class BottomSheetsPage extends StatelessWidget {
-  const BottomSheetsPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        showModalBottomSheet(
-            backgroundColor: AppColors.colorPrimary,
-            context: context,
-            builder: (BuildContext context) {
-              return Container(
-                height: 400,
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 16.0, bottom: 32.0),
-                      child: Center(
-                        child: Container(
-                          height: 5,
-                          width: 100,
-                          decoration: BoxDecoration(
-                              color: AppColors.colorGreyDark,
-                              borderRadius: BorderRadius.circular(12)
-                          ),
-
-                        ),
-                      ),
-                    ),
-                    ListTile(
-                      leading: Icon(
-                          Icons.comment, color: AppColors.colorBlackHighButton),
-                      title: Text('Comments', style: TextStyle(
-                          color: AppColors.colorBlackHighButton),),
-                    ),
-                    ListTile(
-                      leading: Icon(
-                          Icons.share, color: AppColors.colorBlackHighButton),
-                      title: Text('Share', style: TextStyle(
-                          color: AppColors.colorBlackHighButton),),
-                    ),
-                    ListTile(
-                      leading: Icon(Icons.bookmarks,
-                          color: AppColors.colorBlackHighButton),
-                      title: Text('Bookmark', style: TextStyle(
-                          color: AppColors.colorBlackHighButton),),
-                    ),
-                    ListTile(
-                      leading: Icon(
-                          Icons.report, color: AppColors.colorBlackHighButton),
-                      title: Text('Reports', style: TextStyle(
-                          color: AppColors.colorBlackHighButton),),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 8.0),
-                      child: GestureDetector(
-                        onTap: (){
-                          Navigator.pop(context);
-                        },
-                        child: Container(
-                          height: 50,
-                          width: 328,
-                          alignment: AlignmentDirectional.center,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(16),
-                            color: AppColors.colorBlackHighButton,
-                          ),
-                          child: Text('Close', style: GoogleFonts.inter(textStyle: TextStyle(fontSize: 16, fontWeight: FontWeights.SemiBold, color: AppColors.colorText)),),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              );
-            }
-        );
-      },
-      child: Icon(
-        Icons.more_horiz,
-        size: 24,
-      ),
-    );
-  }
-}

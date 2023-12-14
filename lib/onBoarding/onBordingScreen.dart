@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:newspaper/constants/colors.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import '../screen/bottomNavigationScreen.dart';
 import '../screen/homePageScreen.dart';
 import 'intro_page01.dart';
 import 'intro_page02.dart';
@@ -54,10 +55,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       onlastPage?
                       GestureDetector(
                         onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => HomePageScreen()));
+                          Navigator.pushReplacementNamed(context, '/homepage');
                             _controller.nextPage(duration: Duration(milliseconds: 500), curve: Curves.easeIn);
                         },
                         child: Container(

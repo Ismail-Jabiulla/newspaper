@@ -23,5 +23,7 @@ class appImages{
 
   static const String imageBreakingNews = 'assets/images/breaking_new.jpeg';
   static const String imageSlider01 = 'assets/images/gaza.jpg';
+  static const String imageSlider02 = 'assets/images/slider02.jpg';
+  static const String imageSlider03 = 'assets/images/slider03.jpg';
   static const String imageAllnewspolitics = 'assets/images/skynews-israel-palestinians_5659101.jpg';
 }

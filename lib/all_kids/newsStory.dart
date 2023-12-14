@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:newspaper/constants/image_strings.dart';
 
-class LiveNews extends StatelessWidget {
-  const LiveNews({super.key});
+class NewsStories extends StatelessWidget {
+  const NewsStories({super.key});
 
   @override
   Widget build(BuildContext context) {
