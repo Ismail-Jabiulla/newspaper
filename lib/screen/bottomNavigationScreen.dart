@@ -1,9 +1,8 @@
 
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import '../constants/colors.dart';
+import 'bookmarkScreen.dart';
 import 'homePageScreen.dart';
 
 class BottomNavigationBarPage extends StatefulWidget {
@@ -21,7 +20,7 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
     HomePageScreen(),
     PodcastPage(),
     PublicPage(),
-    BookmarkPage(),
+    BookmarkScreen(),
     PersonProfilePage(),
   ];
 
@@ -95,15 +94,6 @@ class PublicPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Text('Public'),
-    );
-  }
-}
-
-class BookmarkPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text('Bookmark'),
     );
   }
 }

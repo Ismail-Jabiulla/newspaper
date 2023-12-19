@@ -31,7 +31,7 @@ class _AllLatestKidState extends State<AllLatestKid> {
           // shrinkWrap: true,
           // physics: NeverScrollableScrollPhysics(),
           children: [
-            // politics Section
+            ///--------- politics Section-------------
             Padding(
               padding: const EdgeInsets.only(top: 8.0, left: 16, right: 16),
               child: Row(
@@ -45,7 +45,6 @@ class _AllLatestKidState extends State<AllLatestKid> {
                   ),
                   GestureDetector(
                       onTap: () {
-                        print('View All');
                       },
                       child: Text('All View')),
                 ],
@@ -137,7 +136,7 @@ class _AllLatestKidState extends State<AllLatestKid> {
                 },
               ),
             ),
-            //Politics SeeMore Button
+            ///------Politics SeeMore Button------------
             Padding(
               padding: const EdgeInsets.only(top: 16.0),
               child: Center(
@@ -164,7 +163,9 @@ class _AllLatestKidState extends State<AllLatestKid> {
                 ),
               ),
             ),
+            ///-------Sports News ------------------
             SportNews(),
+            ///--------Technology News -------------
             TechnologyNews()
 
           ],

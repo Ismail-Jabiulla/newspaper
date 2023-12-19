@@ -15,6 +15,8 @@ import 'package:carousel_slider/carousel_controller.dart';
 import '../constants/fonts_widgets.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 
+import 'notificationScreen.dart';
+
 class HomePageScreen extends StatefulWidget {
   @override
   _HomePageScreenState createState() => _HomePageScreenState();
@@ -59,6 +61,7 @@ class _HomePageScreenState extends State<HomePageScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      ///-------App Bar----------
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Center(
@@ -103,7 +106,9 @@ class _HomePageScreenState extends State<HomePageScreen>
                 color: AppColors.colorBlackHighButton,
               )),
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>NotificationScreen()));
+              },
               icon: Icon(Icons.notifications,
                   color: AppColors.colorBlackHighButton)),
         ],
