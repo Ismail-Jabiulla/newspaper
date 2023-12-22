@@ -326,3 +326,82 @@
 //     );
 //   }
 // }
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+enum Gender { Male, Female, Other }
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: ProfileScreen(),
+    );
+  }
+}
+
+class ProfileScreen extends StatefulWidget {
+  @override
+  _ProfileScreenState createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+  Gender _selectedGender = Gender.Male; // Default gender
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Profile'),
+      ),
+      body: Center(
+        child: Padding(
+          padding: EdgeInsets.all(20.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              TextFormField(
+                decoration: InputDecoration(
+                  labelText: 'Name',
+                  border: OutlineInputBorder(),
+                ),
+                onChanged: (value) {
+                  // Handle name changes
+                },
+              ),
+              SizedBox(height: 20),
+              DropdownButtonFormField<Gender>(
+                value: _selectedGender,
+                onChanged: (newValue) {
+                  setState(() {
+                    _selectedGender = newValue!;
+                  });
+                },
+                items: Gender.values.map((Gender gender) {
+                  return DropdownMenuItem<Gender>(
+                    value: gender,
+                    child: Text(gender.toString().split('.').last),
+                  );
+                }).toList(),
+                decoration: InputDecoration(
+                  labelText: 'Gender',
+                  border: OutlineInputBorder(),
+                ),
+              ),
+              SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  // Handle saving profile changes
+                },
+                child: Text('Save Profile'),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

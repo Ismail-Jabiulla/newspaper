@@ -178,7 +178,7 @@ class _AllLatestKidState extends State<AllLatestKid> {
 
 
 
-//Sports News
+///------------Sports News-----------------
 class SportNews extends StatefulWidget {
   const SportNews({super.key});
 
@@ -194,7 +194,7 @@ class _SportNewsState extends State<SportNews> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // politics Section
+          ///---------------politics Section----------------
           Padding(
             padding: const EdgeInsets.only(top: 8.0, left: 16, right: 16),
             child: Row(
@@ -289,7 +289,7 @@ class _SportNewsState extends State<SportNews> {
 }
 
 
-//Technology
+///----------------Technology---------------------
 class TechnologyNews extends StatefulWidget {
   const TechnologyNews({super.key});
 
@@ -305,7 +305,7 @@ class _TechnologyNewsState extends State<TechnologyNews> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // politics Section
+          ///------------------Technology Section------------------------
           Padding(
             padding: const EdgeInsets.only(top: 8.0, left: 16, right: 16),
             child: Row(
