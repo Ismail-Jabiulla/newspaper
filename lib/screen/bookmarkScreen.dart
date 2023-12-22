@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:newspaper/screen/searchScreen.dart';
 import '../all_kids/bottomSheetKid.dart';
 import '../constants/colors.dart';
 import 'package:newspaper/constants/image_strings.dart';
@@ -56,12 +57,16 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
           ),
         ),
         actions: [
+          ///-------------Search-----------------------
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>SearchScreen()));
+              },
               icon: Icon(
                 Icons.search,
                 color: AppColors.colorBlackHighButton,
               )),
+          ///---------------Notifications-------------------
           IconButton(
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context)=>NotificationScreen()));

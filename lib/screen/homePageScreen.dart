@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:newspaper/constants/image_strings.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:newspaper/screen/searchScreen.dart';
 import '../all_kids/newsStory.dart';
 import '../categorykid/allLatest.dart';
 import '../categorykid/international.dart';
@@ -99,15 +100,21 @@ class _HomePageScreenState extends State<HomePageScreen>
           ),
         ),
         actions: [
+          ///--------------Search-------------------
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>SearchScreen()));
+                Future.delayed(Duration(milliseconds: 200));
+              },
               icon: Icon(
                 Icons.search,
                 color: AppColors.colorBlackHighButton,
               )),
+          ///-----------------Notifications-------------------
           IconButton(
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context)=>NotificationScreen()));
+                Future.delayed(Duration(milliseconds: 200));
               },
               icon: Icon(Icons.notifications,
                   color: AppColors.colorBlackHighButton)),
