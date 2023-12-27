@@ -2,6 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../constants/colors.dart';
+import '../profile_screen/complete_screen01.dart';
 import 'bookmarkScreen.dart';
 import 'homePageScreen.dart';
 
@@ -21,7 +22,7 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
     PodcastPage(),
     PublicPage(),
     BookmarkScreen(),
-    PersonProfilePage(),
+    CompleteScreen01(),
   ];
 
   @override
@@ -94,15 +95,6 @@ class PublicPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Text('Public'),
-    );
-  }
-}
-
-class PersonProfilePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text('Profile Screen'),
     );
   }
 }

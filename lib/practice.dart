@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:newspaper/profile_screen/completeScreen01.dart';
-import 'package:newspaper/screen/bookmarkScreen.dart';
-import 'package:newspaper/screen/detailNewsScreen.dart';
-import 'package:newspaper/screen/notificationScreen.dart';
-import 'package:newspaper/screen/searchScreen.dart';
+import 'package:newspaper/profile_screen/code_varification.dart';
+import 'package:newspaper/profile_screen/complete_screen01.dart';
+import 'package:newspaper/profile_screen/sign_upscreen.dart';
+import 'package:newspaper/profile_screen/signin_screen.dart';
+
+import 'demo.dart';
 
 
 void main() {
@@ -20,8 +21,9 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
           useMaterial3: true,
         ),
-     home: CompleteScreen01(),
-      // BookmarkScreen(),
+     home:SignUpScreen(),
+      //CodeVarificationScreen(),
+
     );
   }
 }

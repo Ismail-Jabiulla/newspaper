@@ -76,91 +76,94 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
         ],
       ),
 
-      body: Padding(
-        padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
-        child: GridView.builder(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              crossAxisSpacing: 10,
-              mainAxisSpacing: 10,
-              childAspectRatio: 0.61,
-            ),
-            itemCount: 20,
-            itemBuilder: (BuildContext context, index) {
-              return Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
-                  color: AppColors.colorGreyLightest,
-                ),
-                child: Column(
-                  children: [
-                    ///----------Title----------------
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          top: 16.0, left: 16.0, right: 16.0),
-                      child: Text(
-                        'Can US visa bans deter West Bank violence by Israeli settlers?',
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 2,
-                        style: GoogleFonts.inter(
-                            textStyle: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeights.Bold,
-                                color: AppColors.colorBlackIcon)),
-                      ),
+      body: GridView.builder(
+        padding: EdgeInsets.all(8),
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 10,
+            childAspectRatio: 0.61,
+          ),
+          itemCount: 20,
+          itemBuilder: (BuildContext context, index) {
+            return Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16),
+                color: AppColors.colorGreyLightest,
+                // boxShadow: [BoxShadow(
+                //     color: CupertinoColors.inactiveGray,
+                //     offset: Offset(0.0, 0.2),
+                //   blurRadius: 1.0
+                // ),]
+              ),
+              child: Column(
+                children: [
+                  ///----------Title----------------
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        top: 16.0, left: 16.0, right: 16.0),
+                    child: Text(
+                      'Can US visa bans deter West Bank violence by Israeli settlers?',
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 2,
+                      style: GoogleFonts.inter(
+                          textStyle: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeights.Bold,
+                              color: AppColors.colorBlackIcon)),
                     ),
+                  ),
 
-                    ///--------Sub-Title---------
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          top: 8.0, left: 16.0, right: 16.0),
-                      child: Text(
-                        'Hours after the announcement, Israeli Defence Minister Yoav Gallant said at a news conference: “There is, sadly, violence from extremists that we must condemn,” while many American officials have called on Israel to implement stricter measures against such incidents.',
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 3,
-                        style: GoogleFonts.inter(
-                            textStyle: TextStyle(
-                                fontSize: 10,
-                                fontWeight: FontWeights.SemiBold,
-                                color: AppColors.colorBlackIcon)),
-                      ),
+                  ///--------Sub-Title---------
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        top: 8.0, left: 16.0, right: 16.0),
+                    child: Text(
+                      'Hours after the announcement, Israeli Defence Minister Yoav Gallant said at a news conference: “There is, sadly, violence from extremists that we must condemn,” while many American officials have called on Israel to implement stricter measures against such incidents.',
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 3,
+                      style: GoogleFonts.inter(
+                          textStyle: TextStyle(
+                              fontSize: 10,
+                              fontWeight: FontWeights.SemiBold,
+                              color: AppColors.colorBlackIcon)),
                     ),
-                    ///-------------images----------------
-                    Padding(
-                      padding: const EdgeInsets.only(top: 8.0),
-                      child: ClipRRect(
-                          borderRadius: BorderRadius.circular(12),
-                          child: Image.asset(
-                            appImages.imageAllnewspolitics,
-                            height: 100,
-                            width: 180,
-                          )),
+                  ),
+                  ///-------------images----------------
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0),
+                    child: ClipRRect(
+                        borderRadius: BorderRadius.circular(12),
+                        child: Image.asset(
+                          appImages.imageAllnewspolitics,
+                          height: 100,
+                          width: 180,
+                        )),
+                  ),
+                  ///----------------Time------------------
+                  Padding(
+                    padding: const EdgeInsets.only( top: 16,
+                        left: 8.0, right: 8.0
                     ),
-                    ///----------------Time------------------
-                    Padding(
-                      padding: const EdgeInsets.only( top: 16,
-                          left: 8.0, right: 8.0
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text('12.13 AM'),
-                          BottomSheets_Bookmark(),
-                        ],
-                      ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text('12.13 AM'),
+                        BottomSheets_Bookmark(),
+                      ],
                     ),
-                    IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.play_circle_filled_sharp,
-                          size: 44,
-                          color: AppColors.colorBlackHighButton,
-                        ))
-                  ],
-                ),
-              );
-            }),
-      ),
+                  ),
+                  IconButton(
+                      onPressed: () {},
+                      icon: Icon(
+                        Icons.play_circle_filled_sharp,
+                        size: 44,
+                        color: AppColors.colorBlackHighButton,
+                      ))
+                ],
+              ),
+            );
+          }),
     );
   }
 }

@@ -15,15 +15,17 @@ class appImages{
   static const String iconsSports = 'assets/images/sports.svg';
   static const String iconsInternational= 'assets/images/internatinal.svg';
   static const String iconsMedia = 'assets/images/media.svg';
+  static const String iconGooglelogo = 'assets/images/googlelogo.png';
 
   //animation
-
+  static const String congratulationGifImage = 'assets/images/Congratulations.gif';
   //slider Banner
-
-
   static const String imageBreakingNews = 'assets/images/breaking_new.jpeg';
   static const String imageSlider01 = 'assets/images/gaza.jpg';
   static const String imageSlider02 = 'assets/images/slider02.jpg';
   static const String imageSlider03 = 'assets/images/slider03.jpg';
   static const String imageAllnewspolitics = 'assets/images/skynews-israel-palestinians_5659101.jpg';
+
+  //profile
+  static const String signupImage = 'assets/images/header.jpg';
 }
