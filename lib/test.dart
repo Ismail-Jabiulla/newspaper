@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:newspaper/profile_screen/code_varification.dart';
 import 'package:newspaper/profile_screen/complete_screen01.dart';
+import 'package:newspaper/profile_screen/confirm_password.dart';
+import 'package:newspaper/profile_screen/forget_password.dart';
 import 'package:newspaper/profile_screen/sign_upscreen.dart';
 import 'package:newspaper/profile_screen/signin_screen.dart';
 
@@ -21,7 +23,10 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
           useMaterial3: true,
         ),
-     home:SignUpScreen(),
+     home:CompleteScreen01(),
+      //ConfirmPasswordScreen(),
+      //ForgetPasswordScreen(),
+     //SignUpScreen(),
       //CodeVarificationScreen(),
 
     );

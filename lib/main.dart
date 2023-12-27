@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:newspaper/demo.dart';
-import 'package:newspaper/practice.dart';
+import 'package:newspaper/test.dart';
 import 'package:newspaper/screen/bottomNavigationScreen.dart';
 import 'package:newspaper/screen/homePageScreen.dart';
 import 'categorykid/politics.dart';

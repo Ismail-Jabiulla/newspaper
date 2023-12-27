@@ -171,16 +171,47 @@ class _CompleteScreen01State extends State<CompleteScreen01> {
                 ),
                 ///---------Update Button--------------
                 Padding(
-                  padding: const EdgeInsets.only(top: 70.0, bottom: 16),
-                  child: Container(
-                    alignment: AlignmentDirectional.center,
-                    height: 50,
-                    width: 328,
-                    decoration: BoxDecoration(
-                      color: AppColors.colorGrey,
-                      borderRadius: BorderRadius.circular(32),
+                  padding: const EdgeInsets.only(top: 50.0, bottom: 16),
+                  child: GestureDetector(
+                    onTap: (){
+                      print('Update');
+                    },
+                    child: Container(
+                      alignment: AlignmentDirectional.center,
+                      height: 50,
+                      width: 328,
+                      decoration: BoxDecoration(
+                        color: AppColors.colorGrey,
+                        borderRadius: BorderRadius.circular(32),
+                      ),
+                      child: Text('Update', style: GoogleFonts.inter(textStyle: TextStyle(fontSize: 16, fontWeight: FontWeights.SemiBold, color: AppColors.colorGreyDark),),)
                     ),
-                    child: Text('Update', style: GoogleFonts.inter(textStyle: TextStyle(fontSize: 16, fontWeight: FontWeights.SemiBold, color: AppColors.colorGreyDark),),)
+                  ),
+                ),
+                ///---------LogOut--------------
+                Padding(
+                  padding: const EdgeInsets.only(top: 32.0, bottom: 16),
+                  child: GestureDetector(
+                    onTap: (){
+                      print('Logout');
+                    },
+                    child: Container(
+                        alignment: AlignmentDirectional.center,
+                        height: 50,
+                        width: 200,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(32),
+                          border: Border.all(color: AppColors.colorGrey)
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.logout, color: Colors.red,),
+                            SizedBox(width: 10,),
+                            Text('Logout', style: GoogleFonts.inter(textStyle: TextStyle(fontSize: 16, fontWeight: FontWeights.SemiBold, color: Colors.red),),),
+                          ],
+                        )
+                    ),
                   ),
                 ),
               ],
