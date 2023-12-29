@@ -6,6 +6,8 @@ import 'package:newspaper/profile_screen/sign_upscreen.dart';
 
 import '../constants/colors.dart';
 import '../constants/fonts_widgets.dart';
+import 'code_varification.dart';
+import 'forgetpass_verification.dart';
 
 class ForgetPasswordScreen extends StatefulWidget {
   const ForgetPasswordScreen({super.key});
@@ -38,7 +40,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
-                      'Forgot Password?',
+                      'Enter your email',
                       style: GoogleFonts.barlow(
                         textStyle: TextStyle(
                           fontSize: 28,
@@ -80,7 +82,9 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
             Padding(
               padding: const EdgeInsets.only(top: 32.0),
               child: GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => ForgetPass_VarificatioCode()));
+                },
                 child: Container(
                     alignment: AlignmentDirectional.center,
                     height: 50,

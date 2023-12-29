@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:newspaper/demo.dart';
+import 'package:newspaper/profile_screen/profile_screen.dart';
 import 'package:newspaper/test.dart';
 import 'package:newspaper/screen/bottomNavigationScreen.dart';
 import 'package:newspaper/screen/homePageScreen.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => OnBoardingScreen(),
         '/homepage': (context) => BottomNavigationBarPage(),
+        '/profile': (context) => ProfileScreen(),
       },
       // Initial route
       initialRoute: '/',

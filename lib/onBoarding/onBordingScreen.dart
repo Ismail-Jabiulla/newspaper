@@ -51,7 +51,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     crossAxisAlignment: CrossAxisAlignment.end,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      //add Skip Button here
+                      ///----------------add Skip Button here---------------
                       onlastPage?
                       GestureDetector(
                         onTap: () {
