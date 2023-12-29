@@ -6,6 +6,9 @@ import '../constants/colors.dart';
 import '../constants/fonts_widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../podcast/podcast_player.dart';
+import '../screen/bottomNavigationScreen.dart';
+
 class AllLatestKid extends StatefulWidget {
   const AllLatestKid({super.key});
 
@@ -123,8 +126,11 @@ class _AllLatestKidState extends State<AllLatestKid> {
                             ],
                           ),
                         ),
+                        ///----------------media--------------------
                         IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>PosdcastPlayer()));
+                            },
                             icon: Icon(
                               Icons.play_circle_filled_sharp,
                               size: 44,

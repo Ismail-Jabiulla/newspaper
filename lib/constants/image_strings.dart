@@ -19,6 +19,7 @@ class appImages{
 
   //animation
   static const String congratulationGifImage = 'assets/images/Congratulations.gif';
+  static const String successGifImage = 'assets/images/icons8-success (1).gif';
   //slider Banner
   static const String imageBreakingNews = 'assets/images/breaking_new.jpeg';
   static const String imageSlider01 = 'assets/images/gaza.jpg';
@@ -28,4 +29,6 @@ class appImages{
 
   //profile
   static const String signupImage = 'assets/images/header.jpg';
+
+  static const String podcastImage01 = 'assets/images/podcastImage.jpg';
 }

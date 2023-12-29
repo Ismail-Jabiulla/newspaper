@@ -6,6 +6,8 @@ import 'package:newspaper/constants/fonts_widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../all_kids/bottomSheetKid.dart';
+import '../podcast/podcast_player.dart';
+import '../screen/bottomNavigationScreen.dart';
 
 class mediaPage extends StatelessWidget {
   const mediaPage({super.key});
@@ -87,7 +89,7 @@ class mediaPage extends StatelessWidget {
                               BottomSheetsPage(),
                               GestureDetector(
                                   onTap: () {
-                                    print('Play');
+                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>PosdcastPlayer()));
                                   },
                                   child: Icon(
                                     Icons.play_circle,

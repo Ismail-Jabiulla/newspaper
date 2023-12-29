@@ -2,7 +2,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../constants/colors.dart';
-import '../profile_screen/complete_screen01.dart';
+import '../podcast/podcast_player.dart';
+import '../podcast/podcast_screen.dart';
+import '../profile_screen/profile_screen.dart';
 import 'bookmarkScreen.dart';
 import 'homePageScreen.dart';
 
@@ -19,10 +21,10 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
   final List<Widget> _screens = [
     // Add your screens here
     HomePageScreen(),
-    PodcastPage(),
+    PosdcastPlayer(),
     PublicPage(),
     BookmarkScreen(),
-    CompleteScreen01(),
+    ProfileScreen(),
   ];
 
   @override
@@ -75,17 +77,6 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
                 label: '')
           ],
         )
-    );
-  }
-}
-
-
-
-class PodcastPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text('Podcast'),
     );
   }
 }

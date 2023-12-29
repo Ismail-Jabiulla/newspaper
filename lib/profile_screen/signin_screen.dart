@@ -6,8 +6,41 @@ import 'package:newspaper/constants/image_strings.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:newspaper/profile_screen/sign_upscreen.dart';
 
-class SignInScreen extends StatelessWidget {
+class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
+
+  @override
+  State<SignInScreen> createState() => _SignInScreenState();
+}
+
+class _SignInScreenState extends State<SignInScreen> {
+
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+  bool _isButtonEnable = false;
+  Color _buttonColor = Colors.grey;
+
+
+  void _checkTextField(){
+    setState(() {
+      _isButtonEnable = _emailController.text.isNotEmpty && _passwordController.text.isNotEmpty;
+    });
+  }
+
+  @override
+  void initState() {
+    _emailController.addListener(_checkTextField);
+    _passwordController.addListener(_checkTextField);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +67,7 @@ class SignInScreen extends StatelessWidget {
                     Text(
                       'Sign in to your \nAccount',
                       style: GoogleFonts.barlow(
-                        textStyle: TextStyle(
+                        textStyle: const TextStyle(
                           fontSize: 28,
                           fontWeight: FontWeights.SemiBold,
                           color: AppColors.colorText,
@@ -48,7 +81,7 @@ class SignInScreen extends StatelessWidget {
                           TextSpan(text: '''Don't have an account? '''),
                           TextSpan(
                             text: 'Create a Account',
-                            style: TextStyle(
+                            style: const TextStyle(
                                 fontWeight: FontWeights.Bold,
                                 decoration: TextDecoration.underline),
                             recognizer: TapGestureRecognizer()
@@ -79,6 +112,10 @@ class SignInScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: 8.0, right: 8, left: 8),
               child: TextField(
+                controller: _emailController,
+                onChanged: (value){
+                  _checkTextField();
+                },
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
                     // labelText: 'Enter Your email',
@@ -102,7 +139,10 @@ class SignInScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: 8.0, right: 8, left: 8),
               child: TextField(
-                //keyboardType: TextInputType.visiblePassword,
+                controller: _passwordController,
+                onChanged: (value){
+                  _checkTextField();
+                },
                 obscureText: true,
                 decoration: InputDecoration(
                     //labelText: 'Enter your password',
@@ -130,13 +170,13 @@ class SignInScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: 100.0),
               child: GestureDetector(
-                onTap: () {},
+               onTap: _isButtonEnable ? (){ print('Submitted');}: null,
                 child: Container(
                     alignment: AlignmentDirectional.center,
                     height: 50,
                     width: 328,
                     decoration: BoxDecoration(
-                      color: AppColors.colorGrey,
+                      color: _isButtonEnable? AppColors.colorBlackHighButton: AppColors.colorGrey,
                       borderRadius: BorderRadius.circular(32),
                     ),
                     child: Text(
@@ -145,7 +185,7 @@ class SignInScreen extends StatelessWidget {
                         textStyle: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeights.SemiBold,
-                            color: AppColors.colorGreyDark),
+                            color: _isButtonEnable? AppColors.colorWhiteHighEmp: AppColors.colorGreyDark,),
                       ),
                     )),
               ),
